@@ -21,8 +21,9 @@ fn main()
                 .build(),
         )
         .add_event::<SpawnAntEvent>()
-        .add_systems(Startup, (setup, spawn_hive, spawn_target, spawn_bound))
-        .add_systems(Update, (camera_movement, ant_movement, hive_mind, get_mouse_input))
+        .add_event::<MouseEvent>()
+        .add_systems(Startup, (setup, spawn_light, spawn_ground, spawn_hive, spawn_target,))
+        .add_systems(Update, (get_mouse_input,camera_movement, ant_movement, hive_mind,))
         .add_systems(Update, spawn_ant)
         .run();
 }

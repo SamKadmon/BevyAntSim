@@ -1,4 +1,7 @@
 #[derive(Component)]
+pub struct Anchor {} //Camera Marker
+
+#[derive(Component)]
 pub struct Player {
     pub speed: f32, // Movement Speed
 }
